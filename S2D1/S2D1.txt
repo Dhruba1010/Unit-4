@@ -1,0 +1,23 @@
+use assignment
+
+db.createCollection("users")
+
+db.users.insert({"first_name":"Dhruba", "last_name":"Singha", "email":"dhrubasingha096p@gmail.com", "gender":"male", "ip_address":"115.187.49.123", "age":23})
+
+db.users.insertMany([{"first_name":"Dhruba", "last_name":"Singha", "email":"dhrubasingha096p@gmail.com", "gender":"male", "ip_address":"115.187.49.123", "age":24}, {"first_name":"Dhruba", "last_name":"Singha", "email":"dhrubasingha096p@gmail.com", "gender":"male", "ip_address":"115.187.49.123", "age":25}, {"first_name":"Dhruba", "last_name":"Singha", "email":"dhrubasingha096p@gmail.com", "gender":"male", "ip_address":"115.187.49.123", "age":26}, {"first_name":"Dhruba", "last_name":"Singha", "email":"dhrubasingha096p@gmail.com", "gender":"male", "ip_address":"115.187.49.123", "age":27}, {"first_name":"Dhruba", "last_name":"Singha", "email":"dhrubasingha096p@gmail.com", "gender":"male", "ip_address":"115.187.49.123", "age":28}, {"first_name":"Dhruba", "last_name":"Singha", "email":"dhrubasingha096p@gmail.com", "gender":"male", "ip_address":"115.187.49.123", "age":29}, {"first_name":"Dhruba", "last_name":"Singha", "email":"dhrubasingha096p@gmail.com", "gender":"male", "ip_address":"115.187.49.123", "age":30}, {"first_name":"Dhruba", "last_name":"Singha", "email":"dhrubasingha096p@gmail.com", "gender":"male", "ip_address":"115.187.49.123", "age":31}, {"first_name":"Dhruba", "last_name":"Singha", "email":"dhrubasingha096p@gmail.com", "gender":"male", "ip_address":"115.187.49.123", "age":32}])
+
+db.users.find({}).pretty()
+
+db.users.findOne({"age":23})
+
+db.users.update({"age":23}, {$set: {"qualification": "B.Tech"}})
+
+db.users.updateMany({"first_name": "Dhruba"}, {$set: {"qualification": "B.Tech"}})
+
+db.users.remove({"age": 32})
+
+db.users.deleteOne({"age": 31})
+
+db.users.deleteMany({"first_name": "Dhruba"})
+
+db.dropDatabase()
