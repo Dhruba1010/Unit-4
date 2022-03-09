@@ -1,0 +1,25 @@
+db.users.find({}, {movie_name: 1}).pretty()
+
+db.users.find({}, {movie_name: 0}).pretty()
+
+db.users.find({budget: {$gt: 15000}}).pretty()
+
+db.users.find({budget: {$gte: 15000}}).pretty()
+
+db.users.find({budget: {$lt: 15000}}).pretty()
+
+db.users.find({budget: {$lte: 15000}}).pretty()
+
+db.users.find({$and: [{budget:{$gt: 10000}},{production_year: {$gt: 2000}}]}).pretty()
+
+db.users.find({$or: [{budget:{$gt: 10000}},{production_year: {$gt: 2000}}]}).pretty()
+
+db.users.find({$nor: [{budget:{$gt: 10000}},{production_year: {$gt: 2000}}]}).pretty()
+
+db.users.find({$and: [{budget: {$not: {$eq: 10000}}}, {production_year: {$not: {$eq: 2000}}}]}).pretty()
+
+db.users.find({$and: [{production_year: {$gte: 2000}}, {production_year: {$lte: 2010}}]}).pretty()
+
+db.users.find({}).sort({production_year: -1, movie_name: 1}).pretty()
+
+db.users.find({}).skip(10).limit(5).pretty()
